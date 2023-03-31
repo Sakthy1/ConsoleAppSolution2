@@ -10,51 +10,55 @@ namespace ConsoleAppProject.App04
     {
         private NewsFeed news = new NewsFeed();
 
-
         public void DisplayMenu()
         {
+            ConsoleHelper.OutputHeading("App04 Social Network");
+
             Console.WriteLine("which app you want to open");
-            Console.WriteLine("Select of the number");
-            Console.WriteLine("1. Message Post");
-            Console.WriteLine("2. photo Post");
+            Console.WriteLine("1. Add Message Post");
+            Console.WriteLine("2. Add Photo Post");
             Console.WriteLine("3. Display all  Posts");
+            Console.WriteLine("4. Quit");
 
-
-            Console.WriteLine("3.. Please Enter any number");
+            Console.WriteLine(".. Please Enter any number");
 
             string choice = Console.ReadLine();
 
             if (choice == "1")
             {
-                postMessage();
+                PostMessage();
             }
             else if (choice == "2")
             {
-                postPhoto();
+                PostPhoto();
             }
-            else
+            else if (choice == "3")
             {
-                postAll();
+                DisplayAll();
             }
         }
-            private void postAll()
-            {
-                
-            }
-            private void postPhoto()
-            {
-                
-            }
-            private void postMessage()
-            {
-                
-            }
+        private void DisplayAll()
+        {
+            ConsoleHelper.OutputTitle("Display All Posts");
+            DisplayMenu();
+        }
 
+        private void PostPhoto()
+        {
+            ConsoleHelper.OutputTitle("Add Photo Post");
+            DisplayMenu();
+        }
 
+        private void PostMessage()
+        {
+            ConsoleHelper.OutputTitle("Add Photo Post");
+            DisplayMenu();
+        }
 
-        
-        
+        private void Quit()
+        {
 
+        }
     }
 
 }
