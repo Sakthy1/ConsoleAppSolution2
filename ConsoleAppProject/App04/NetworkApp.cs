@@ -39,15 +39,15 @@ namespace ConsoleAppProject.App04
         }
             private void postAll()
             {
-                news.DisplayMenu();
+                
             }
             private void postPhoto()
             {
-                news.DisplayMenu();
+                
             }
             private void postMessage()
             {
-                news.DisplayMenu();
+                
             }
 
 

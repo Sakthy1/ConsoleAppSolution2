@@ -36,55 +36,48 @@ namespace ConsoleAppProject
 
             StudentGrades Stu = new StudentGrades();
 
-
-           // BMI calculator = new BMI();
-            //calculator.Run();
-
             StudentGrades student = new StudentGrades();
             student.Run();
 
-
-            BMI calculator = new BMI();
-           // calculator.Run
-            DistanceConverter converter = new DistanceConverter();
-            converter.Run();
-
-            BMI converter1 = new BMI();
-            converter1.Run();
+            DistanceConverter distanceConverter = new DistanceConverter();
+ 
+            BMI bmiConverter = new BMI();
             
-          StudentGrades convert = new StudentGrades();
-            convert.Run();
+            StudentGrades gradesConverter = new StudentGrades();
 
-           // Post posts = new Post();
-           // posts.Run();
+            NetworkApp app04 = new NetworkApp();
 
-            string[] menu = new string[3];
-            menu[0] = " Distance Converter";
-            menu[1] = " BMI Calculator";
-            menu[2] = " Student Grade & Marks";
+            string[] menu = new string[] 
+            {
+                "  Distance Converter",
+                "  BMI Calculator",
+                "  Student Grade & Marks",
+                "  Social Network"
+            };
 
             int choice = ConsoleHelper.SelectChoice(menu);
+
             Console.WriteLine();
 
             if (choice == 1)
             {
                 Console.Clear();
-                converter.Run();
+                distanceConverter.Run();
             }
             else if (choice == 2)
             {
                 Console.Clear();
-                calculator.Run();
+                bmiConverter.Run();
             }
             else if (choice == 3)
             {
                 Console.Clear();
-                Stu.Run();
+                gradesConverter.Run();
             }
             else if (choice == 4)
             {
                 Console.Clear();
-                //posts.Run();
+                app04.DisplayMenu();
             }
             else
             {
