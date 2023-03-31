@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 using ConsoleAppProject.Helpers;
 
@@ -9,33 +10,50 @@ namespace ConsoleAppProject.App04
     {
         private NewsFeed news = new NewsFeed();
 
-        
-        public void Run()
-        {
-            string[] choices = new string[]
-            {
-                "Add Message Post",
-                "Add photo post",
-                "Display",
-                "quit"
-            };
-            //int choice = ConsoleHelper.selectChoice(choices);
-            //switch(choice)
-            bool quit = false;
-            while (quit != true)
-            {
-                int choice = ConsoleHelper.SelectChoice(choices);
 
-                switch (choice)
-                {
-                    case 1:  break;
-                    case 2: break;
-                    case 3: break;
-                    case 4: break;
-                    case 5: quit = true; break;
-                }
+        public void DisplayMenu()
+        {
+            Console.WriteLine("which app you want to open");
+            Console.WriteLine("Select of the number");
+            Console.WriteLine("1. Message Post");
+            Console.WriteLine("2. photo Post");
+            Console.WriteLine("3. Display all  Posts");
+
+
+            Console.WriteLine("3.. Please Enter any number");
+
+            string choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                postMessage();
+            }
+            else if (choice == "2")
+            {
+                postPhoto();
+            }
+            else
+            {
+                postAll();
             }
         }
+            private void postAll()
+            {
+                news.DisplayMenu();
+            }
+            private void postPhoto()
+            {
+                news.DisplayMenu();
+            }
+            private void postMessage()
+            {
+                news.DisplayMenu();
+            }
+
+
+
+        
+        
 
     }
 
