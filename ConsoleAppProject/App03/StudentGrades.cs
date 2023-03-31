@@ -6,7 +6,6 @@ using ConsoleAppProject.Helpers;
 
 namespace ConsoleAppProject.App03
 {
-
     /// <summary>
     /// At the moment this class just tests the
     /// Grades enumeration names and descriptions
@@ -20,22 +19,15 @@ namespace ConsoleAppProject.App03
         public const int LowestGradeB = 60;
         public const int LowestGradeA = 70;
 
-        public const int highestMark = 100;
+        public const int HighestMark = 100;
 
         //properties
-        public string[] Student { get; set; }
+        public string[] Students { get; set; }
 
         public int[] Marks { get; set; }
-
-
-
         public int[] GradeProfile { get; set; }
-        public const int HigestMark = 100;
-
+ 
         //properties
-        public string[]  students { get; set; }
-        public int[] marks { get; set; }
-        public int[] gradeProfile { get; set; }
         public double Mean { get; set; }
         public int Minimum { get; set; }
         public int Maximum { get; set; }
@@ -44,7 +36,7 @@ namespace ConsoleAppProject.App03
 
         public StudentGrades()
         {
-            Student = new string[]
+            Students = new string[]
                    {
                 "Nick","Derek","Quincy",
                 "Shakthy","Jaz","Akshith",
@@ -53,7 +45,7 @@ namespace ConsoleAppProject.App03
                     };
             GradeProfile = new int[(int)Grades.A + 1];
 
-            marks = new int[students.Length];
+            Marks = new int[Students.Length];
         }
         
         public void Run()
@@ -62,7 +54,7 @@ namespace ConsoleAppProject.App03
             CalculateStats();
             CalculateGradeprofile();
         
-            marks = new int[]
+            Marks = new int[]
             {
                 10,20,30,40,50,60,70,80,90,100
             };
@@ -125,14 +117,14 @@ namespace ConsoleAppProject.App03
         {
             OutputHeading();
 
-            for (int i = 0; i < Student.Length && i < Marks.Length; i++)
+            for (int i = 0; i < Students.Length && i < Marks.Length; i++)
             {
                 int mark;
                 bool validInput;
 
                 do
                 {
-                    Console.Write($"Enter mark for {Student[i]}: ");
+                    Console.Write($"Enter mark for {Students[i]}: ");
                     validInput = int.TryParse(Console.ReadLine(), out mark);
 
                     if (!validInput)
@@ -164,9 +156,9 @@ namespace ConsoleAppProject.App03
             Console.WriteLine("|   Student  | Mark  |        Grade            |");
             Console.WriteLine("+------------+-------+-------------------------+");
 
-            for (int i = 0; i < Student.Length && i < Marks.Length; i++)
+            for (int i = 0; i < Students.Length && i < Marks.Length; i++)
             {
-                Console.WriteLine($"| {Student[i],-10} | {Marks[i],-5} | {GetGrade(Marks[i]),-23} |");
+                Console.WriteLine($"| {Students[i],-10} | {Marks[i],-5} | {GetGrade(Marks[i]),-23} |");
             }
 
             Console.WriteLine("+------------+-------+-------------------------+");
@@ -228,7 +220,7 @@ namespace ConsoleAppProject.App03
 
             
 
-            else if (mark >= LowestGradeA && mark < HigestMark)
+            else if (mark >= LowestGradeA && mark < HighestMark)
 
             {
                 return Grades.A;
@@ -242,7 +234,7 @@ namespace ConsoleAppProject.App03
         {
             double total = 0;
 
-            Minimum = highestMark;
+            Minimum = HighestMark;
         }
         public void DisplayStats()
         {
@@ -250,7 +242,7 @@ namespace ConsoleAppProject.App03
             Console.WriteLine();
             double total = 0;
 
-            Minimum = HigestMark;
+            Minimum = HighestMark;
 
             Maximum = 0;
             foreach (int mark in Marks)
