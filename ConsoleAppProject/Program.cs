@@ -33,12 +33,7 @@ namespace ConsoleAppProject
             Console.WriteLine(" =================================================");
             Console.WriteLine();
             Console.Beep();
-
-            StudentGrades Stu = new StudentGrades();
-
-            StudentGrades student = new StudentGrades();
-            student.Run();
-
+ 
             DistanceConverter distanceConverter = new DistanceConverter();
  
             BMI bmiConverter = new BMI();
@@ -83,8 +78,6 @@ namespace ConsoleAppProject
             {
                 Console.WriteLine(" Invalid Choice !");
             }
-
-
         }
     }
 }

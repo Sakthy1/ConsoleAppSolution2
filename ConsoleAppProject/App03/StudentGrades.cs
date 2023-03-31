@@ -6,17 +6,6 @@ using ConsoleAppProject.Helpers;
 
 namespace ConsoleAppProject.App03
 {
-    public static class EnumExtensions
-    {
-        public static string GetDescription(this Enum value)
-        {
-            var field = value.GetType().GetField(value.ToString());
-            var descriptionAttribute = field.GetCustomAttributes(typeof(DescriptionAttribute), false)
-                                            .FirstOrDefault() as DescriptionAttribute;
-
-            return descriptionAttribute?.Description ?? value.ToString();
-        }
-    }
 
     /// <summary>
     /// At the moment this class just tests the
@@ -189,31 +178,31 @@ namespace ConsoleAppProject.App03
             SelectOptions();
         }
 
-        private string GetGrade(int mark)
+        private Grades GetGrade(int mark)
         {
             if (mark < 40)
             {
-                return Grades.F.GetDescription();
+                return Grades.F;
             }
             else if (mark < 50)
             {
-                return Grades.D.GetDescription();
+                return Grades.D;
             }
             else if (mark < 60)
             {
-                return Grades.C.GetDescription();
+                return Grades.C;
             }
             else if (mark < 70)
             {
-                return Grades.B.GetDescription();
+                return Grades.B;
             }
             else if (mark >= 70)
             {
-                return Grades.A.GetDescription();
+                return Grades.A;
             }
             else
             {
-                return Grades.X.GetDescription();
+                return Grades.X;
             }
         }
 
