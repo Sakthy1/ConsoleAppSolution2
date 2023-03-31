@@ -72,7 +72,7 @@ namespace ConsoleAppProject
             else if (choice == 4)
             {
                 Console.Clear();
-                app04.DisplayMenu();
+                app04.Run();
             }
             else
             {

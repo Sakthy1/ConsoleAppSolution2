@@ -36,7 +36,6 @@ namespace ConsoleAppProject.App04
         /// </param>
         public PhotoPost(String author, String filename, String caption): base(author)
         {
-            
             this.Filename = filename;
             this.Caption = caption;
            

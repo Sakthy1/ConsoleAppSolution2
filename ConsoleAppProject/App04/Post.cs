@@ -9,12 +9,8 @@ namespace ConsoleAppProject.App04
 {
     public class Post
     {
-
-
-        // username of the post's author
+       // username of the post's author
         public String Username { get; set; }
-
-
         public DateTime Timestamp { get; }
 
         private int likes;
